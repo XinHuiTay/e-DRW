@@ -1,0 +1,13 @@
+Package: eDRW
+Type: Package
+Title: An Entropy-based Directed Random Walk for Pathway Activity Inference
+Version: 0.1.0
+Author: Tay Xin Hui
+Maintainer: Tay Xin Hui <tayxinhui95@gmail.com>
+Description: eDRW is an entropy-based pathway activity inference method using directed random walks on graph. It implements entropy as a parameter variable for random walking in a biological network and Entropy Weight Method (EWM) is applied in for pathway activity inference.
+License: GPL-2
+Encoding: UTF-8
+LazyData: true
+Depends: R (>= 4.2)
+Imports: igraph, Matrix, lattice, caret, e1071
+Collate: 'data.R' 'eDRW (Kegg).R' 'eDRW (Pid).R' 'eDRW (Kegg-Pid).R' 'NB.R' 'KNN.R' 'GLM.R' 'Classification.R' 'Risk Genes (Kegg).R' 'Risk Genes (Pid).R'

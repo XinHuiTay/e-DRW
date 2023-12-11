@@ -1,0 +1,27 @@
+{
+    "id": "B26D0C31",
+    "path": "~/eDRW/R/Risk Genes (Kegg).R",
+    "project_path": "R/Risk Genes (Kegg).R",
+    "type": "r_source",
+    "hash": "3073644211",
+    "contents": "",
+    "dirty": false,
+    "created": 1669690505389.0,
+    "source_on_save": false,
+    "relative_order": 13,
+    "properties": {
+        "tempName": "Untitled2",
+        "source_window_id": "",
+        "Source": "Source",
+        "cursorPosition": "7,39",
+        "scrollLine": "0"
+    },
+    "folds": "",
+    "lastKnownWriteTime": 1669845217,
+    "encoding": "UTF-8",
+    "collab_server": "",
+    "source_window": "",
+    "last_content_update": 1669845217470,
+    "read_only": false,
+    "read_only_alternatives": []
+}

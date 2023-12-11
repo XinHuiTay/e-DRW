@@ -1,0 +1,69 @@
+# eDRW
+
+eDRW is an entropy-based pathway activity inference method using directed random walks on graph. It implements entropy as a parameter variable for random walking in a biological network and Entropy Weight Method (EWM) was applied for pathway activity inference. 
+
+## Installation
+
+You can install the development version of eDRW like so:
+
+``` {install package from github}
+library(devtools)
+install_github("XinHuiTay12/eDRW")
+```
+
+## Getting started
+
+1. Load eDRW package
+
+```{load package}
+library(eDRW)
+```
+
+2. Imports r packages
+
+```{imports r packages}
+library(igraph)
+library(lattice)
+library(Matrix)
+library(caret)
+library(e1071)
+```
+
+3. Get the classification accuracy and predicted risk pathways
+
+Classification takes some time to run (approximately 20 minutes) as the function runs across 10 experiments to get the prediction results
+
+```{Classification using K-Nearest Neighbour}
+PredictCrossKNN <- getPredictCrossKNN(normalizedMatrix, normalized_Matrix, gNonMetabolic, gMetabolic,
+                                      vertexWeight, vertexTScore, vertexEntWeight, LungNormSample,
+                                      LungDiseaseSample, LungNormSample_test, LungDiseaseSample_test,
+                                      LungNormSample_crosstest, LungDiseaseSample_crosstest, 
+                                      gPid2, gPid1, vertex_Weight, vertex_TScore, vertex_EntWeight)
+```
+```{Classification using Naives Bayes}
+PredictCrossNB <- getPredictCrossNB(normalizedMatrix, normalized_Matrix, gNonMetabolic, gMetabolic,
+                                    vertexWeight, vertexTScore, vertexEntWeight, LungNormSample,
+                                    LungDiseaseSample, LungNormSample_test, LungDiseaseSample_test,
+                                    LungNormSample_crosstest, LungDiseaseSample_crosstest,
+                                    gPid2, gPid1, vertex_Weight, vertex_TScore, vertex_EntWeight)
+
+```
+```{Classification using Logistic Regression}
+PredictCrossLR <- getPredictCrossLR(normalizedMatrix, normalized_Matrix, gNonMetabolic, gMetabolic,
+                                    vertexWeight, vertexTScore, vertexEntWeight, LungNormSample,
+                                    LungDiseaseSample, LungNormSample_test, LungDiseaseSample_test,
+                                    LungNormSample_crosstest, LungDiseaseSample_crosstest,
+                                    gPid2, gPid1, vertex_Weight, vertex_TScore, vertex_EntWeight)
+
+```
+
+4. Get the predicted risk genes 
+
+```{Extract genes from predicted KEGG pathways}
+riskPathway <- c("04010")
+riskGenes <- getGenesInClassifierKegg(dataframes, LungNormSample, LungDiseaseSample, riskPathway)
+```
+```{Extract genes from predicted PID pathways}
+riskPathway <- c("204")
+riskGenes <- getGenesInClassifierPid(data_frames, LungNormSample, LungDiseaseSample, riskPathway)
+```
